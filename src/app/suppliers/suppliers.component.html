@@ -1,0 +1,37 @@
+<div class="suppliers-container">
+    <div class="suppliers-header">
+      <h2>Управление поставщиками</h2>
+      <div class="actions">
+        <input type="text" placeholder="Поиск поставщиков..." class="search-input">
+        <button class="add-btn" (click)="openAddDialog()">
+          <i class="fas fa-plus"></i> Добавить поставщика
+        </button>
+      </div>
+    </div>
+  
+    <div class="suppliers-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Название компании</th>
+            <th>Телефон</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let supplier of suppliers">
+            <td>{{ supplier.company_name }}</td>
+            <td>{{ supplier.phone_number }}</td>
+            <td class="actions-cell">
+              <button class="edit-btn" (click)="editSupplier(supplier)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="delete-btn" (click)="deleteSupplier(supplier)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

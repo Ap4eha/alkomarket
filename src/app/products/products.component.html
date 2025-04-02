@@ -1,0 +1,41 @@
+<div class="products-container">
+    <div class="products-header">
+      <h2>Горячительные напитки</h2>
+      <div class="filters">
+        <input type="text" placeholder="Поиск товаров..." class="search-input">
+        <select class="category-select">
+          <option value="">Все категории</option>
+          <option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </option>
+        </select>
+        <button class="add-btn" (click)="openAddDialog()">
+          <i class="fas fa-plus"></i> Добавить товар
+        </button>
+      </div>
+    </div>
+  
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of products">
+        <div class="product-image">
+          <img [src]="product.image || 'assets/default-product.png'" alt="{{ product.name }}">
+        </div>
+        <div class="product-info">
+          <h3>{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <div class="product-meta">
+            <span class="product-price">{{ product.cost }} ₽</span>
+            <span class="product-supplier">{{ getSupplierName(product.company_name) }}</span>
+          </div>
+          <div class="product-actions">
+            <button class="edit-btn" (click)="editProduct(product)">
+              <i class="fas fa-edit"></i> Редактировать
+            </button>
+            <button class="delete-btn" (click)="deleteProduct(product)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

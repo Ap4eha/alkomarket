@@ -1,0 +1,32 @@
+<div class="shops-container">
+    <div class="shops-header">
+      <h2>Магазины "Красное и белое"</h2>
+      <div class="actions">
+        <input type="text" placeholder="Поиск магазинов..." class="search-input">
+        <button class="add-btn" (click)="openAddDialog()">
+          <i class="fas fa-plus"></i> Добавить магазин
+        </button>
+      </div>
+    </div>
+  
+    <div class="shops-content">
+      <div class="shops-map">
+        <!-- Здесь будет карта с магазинами -->
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>Карта с расположением магазинов</p>
+        </div>
+      </div>
+  
+      <div class="shops-list">
+        <div class="shop-card" *ngFor="let shop of shops">
+          <h3>{{ shop.shop_name }}</h3>
+          <p class="shop-address">{{ shop.shop_address }}</p>
+          <p class="shop-id">ID: {{ shop.shop_id }}</p>
+          <div class="shop-actions">
+            <button class="details-btn" (click)="showDetails(shop)">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

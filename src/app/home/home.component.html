@@ -1,0 +1,40 @@
+<div class="container">
+    <header class="header">
+      <h1>Система управления поставками алкогольной продукции</h1>
+      <p class="subtitle">Учет поставщиков, магазинов, товаров и покупателей</p>
+    </header>
+  
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Поставщики</h3>
+        <p class="count">{{ suppliersCount }}</p>
+        <button routerLink="/suppliers" class="btn">Перейти</button>
+      </div>
+      <div class="stat-card">
+        <h3>Магазины</h3>
+        <p class="count">{{ shopsCount }}</p>
+        <button routerLink="/shops" class="btn">Перейти</button>
+      </div>
+      <div class="stat-card">
+        <h3>Товары</h3>
+        <p class="count">{{ productsCount }}</p>
+        <button routerLink="/products" class="btn">Перейти</button>
+      </div>
+      <div class="stat-card">
+        <h3>Покупатели</h3>
+        <p class="count">{{ customersCount }}</p>
+        <button routerLink="/customers" class="btn">Перейти</button>
+      </div>
+    </div>
+  
+    <div class="recent-activity">
+      <h2>Последняя активность</h2>
+      <ul>
+        <li *ngFor="let activity of recentActivities">
+          <span class="activity-type">{{ activity.type }}</span>
+          <span class="activity-details">{{ activity.details }}</span>
+          <span class="activity-time">{{ activity.time }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
